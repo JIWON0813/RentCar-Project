@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="EUC-KR"?>
+<web-app>
+<servlet>
+	<servlet-name>admin</servlet-name>
+	<servlet-class>admin.AdminController</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>admin</servlet-name>
+	<url-pattern>*.admin</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>user</servlet-name>
+	<servlet-class>user.UserController</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>user</servlet-name>
+	<url-pattern>*.user</url-pattern>
+</servlet-mapping>
+</web-app>
