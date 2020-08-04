@@ -1,5 +1,7 @@
 package db;
 
+import java.sql.Date;
+
 public class UserDTO {
 	String id;
 	String name;
@@ -9,7 +11,7 @@ public class UserDTO {
 	String phone;
 	String birth;
 	String driver;
-	String regidate;
+	Date regidate;
 	String admin;
 	
 	
@@ -61,11 +63,11 @@ public class UserDTO {
 	public void setDriver(String driver) {
 		this.driver = driver;
 	}
-	public String getRegidate() {
+	public Date getRegidate() {
 		return regidate;
 	}
-	public void setRegidate(String regidate) {
-		this.regidate = regidate;
+	public void setRegidate(Date date) {
+		this.regidate = date;
 	}
 	public String getAdmin() {
 		return admin;

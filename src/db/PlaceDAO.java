@@ -50,4 +50,35 @@ public class PlaceDAO {
 			if(rs != null) rs.close();
 		}
 	}
+
+
+	public int insertPlace(String name, String max) throws SQLException {
+		try {
+		con = ds.getConnection();
+		String sql = "insert into place values(?,0,0,?)";
+		ps = con.prepareStatement(sql);
+		ps.setString(1, name);
+		ps.setInt(2, Integer.parseInt(max));
+		int res = ps.executeUpdate();
+		return res;
+		}finally {
+			if(con != null) con.close();
+			if(ps != null) ps.close();
+		}
+	}
+
+
+	public int deletePlace(String name) throws SQLException {
+		try {
+		con = ds.getConnection();
+		String sql = "delete from place where name =?";
+		ps = con.prepareStatement(sql);
+		ps.setString(1, name);
+		int res = ps.executeUpdate();
+		return res;
+		}finally {
+			if(con != null) con.close();
+			if(ps != null) ps.close();
+		}
+	}
 }

@@ -19,6 +19,8 @@ public class UserFactory {
 		}
 		else if(cmd.equals("/userLogout.user")) {
 			cmdIf = new UserLogoutCommand();
+		}else if(cmd.equals("/register.user")) {
+			cmdIf = new RegisterCommand();
 		}
 		else if(cmd.equals("/userRegister.user")) {
 			cmdIf = new InsertUserCommand();

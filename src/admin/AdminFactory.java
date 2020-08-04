@@ -22,6 +22,16 @@ public class AdminFactory {
 			cmdIf = new PlaceListCommand();
 		}else if(cmd.equals("/insertCar.admin")) {
 			cmdIf = new InsertCarCommand();
+		}else if(cmd.equals("/insertCar_Ok.admin")) {
+			cmdIf = new InsertCarOkCommand();
+		}else if(cmd.equals("/insertPlace.admin")) {
+			cmdIf = new InsertPlacetCommand();
+		}else if(cmd.equals("/insertPlace_Ok.admin")) {
+			cmdIf = new InsertPlaceOkCommand();
+		}else if(cmd.equals("/deletePlace.admin")) {
+			cmdIf = new DeletePlaceCommand();
+		}else if(cmd.equals("/userlist.admin")) {
+			cmdIf = new UserListCommand();
 		}
 		return cmdIf;
 	}

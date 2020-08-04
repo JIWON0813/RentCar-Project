@@ -24,7 +24,7 @@ public class AppFrontController extends HttpServlet {
 			nextPage= "main.jsp";
 		}
 		else if(cmd.equals("/register.do")) {
-			nextPage= "register.jsp";
+			nextPage= "register.user";
 		}
 		else if(cmd.equals("/admin.do")) {
 			nextPage = "adminMain.admin";
@@ -35,8 +35,6 @@ public class AppFrontController extends HttpServlet {
 			nextPage = "userLogin.user";
 		} else if(cmd.equals("/logout.do")) {
 			nextPage = "userLogout.user";
-		} else if(cmd.equals("/userRegister.do")) {
-			nextPage = "userRegister.user";
 		}
 		
 		RequestDispatcher view = req.getRequestDispatcher(nextPage);

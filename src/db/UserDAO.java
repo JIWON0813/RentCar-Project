@@ -4,11 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 public class UserDAO {
@@ -97,5 +98,34 @@ public class UserDAO {
 			}
 			return 0;
 			
+	}
+	
+	public List userList() throws SQLException {
+		
+		try {
+		con = ds.getConnection();
+		String sql = "select * from member";
+		ps = con.prepareStatement(sql);		
+		rs = ps.executeQuery();
+		List<UserDTO> list = new ArrayList<>();
+		while(rs.next()) {
+			UserDTO dto = new UserDTO();
+			dto.setId(rs.getString("id"));
+			dto.setName(rs.getString("name"));
+			dto.setPassword(rs.getString("password"));
+			dto.setAddress(rs.getString("address"));
+			dto.setEmail(rs.getString("email"));
+			dto.setPhone(rs.getString("phone"));
+			dto.setBirth(rs.getString("birth"));
+			dto.setDriver(rs.getString("driver"));
+			dto.setRegidate(rs.getDate("regidate"));
+			list.add(dto);
+		}
+		return list;
+		}finally {
+			if(con != null) con.close();
+			if(ps != null) ps.close();
+			if(rs != null) rs.close();
+		}
 	}
 }

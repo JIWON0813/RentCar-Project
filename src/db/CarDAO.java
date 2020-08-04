@@ -60,7 +60,7 @@ public class CarDAO {
 		}
 	}
 	
-	public int insertProduct(MultipartRequest mr) throws SQLException{
+	public int insertCar(MultipartRequest mr) throws SQLException{
 		try {
 			con = ds.getConnection();
 			String sql = "insert into car values(?, ?, ?, ?, ?, ?, ?, ?, ?)";

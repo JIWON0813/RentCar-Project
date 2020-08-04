@@ -21,7 +21,7 @@ function isSame() {
 }
 </script>
 <h1 align="center">회 원 가 입</h1>
-<form action="userRegister.do">
+<form action="userRegister.user">
 <table align="center">
 <tr>
 <td class="sub"> 아이디
